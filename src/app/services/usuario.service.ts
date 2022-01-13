@@ -18,4 +18,12 @@ export class UsuarioService {
       })
     );
   }
+
+  getUserById(id) {
+    return this.http.get(`${this.urlBase}users/${id}`).pipe(
+      map((rpta: any) => {
+        return rpta['data'];
+      })
+    );
+  }
 }
